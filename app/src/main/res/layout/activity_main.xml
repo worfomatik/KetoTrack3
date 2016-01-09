@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="366dp"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:id="@+id/profileButton"
+            android:layout_weight="0.19"
+            android:onClick="profileView"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter Food Item"
+            android:id="@+id/enterFoodButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.19"
+            android:onClick="enterFood"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Current Day"
+            android:id="@+id/currentDayButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.19"
+            android:onClick="viewCurrentDay"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Another Day"
+            android:id="@+id/anotherDayButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.19" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Foods Entered"
+            android:id="@+id/foodsButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.19"
+            android:onClick="viewFoods"/>
+
+    </LinearLayout>
+</RelativeLayout>

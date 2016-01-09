@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.that_girl.ketotrack" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Profile"
+            android:label="@string/title_activity_profile" >
+        </activity>
+        <activity
+            android:name=".EditProfile"
+            android:label="@string/title_activity_edit_profile" >
+        </activity>
+        <activity
+            android:name=".EnterFoodItem"
+            android:label="@string/title_activity_enter_food_item" >
+        </activity>
+        <activity
+            android:name=".ViewFoods"
+            android:label="@string/title_activity_view_foods" >
+        </activity>
+        <activity
+            android:name=".EditFood"
+            android:label="@string/title_activity_edit_food" >
+        </activity>
+        <activity
+            android:name=".AddToFoodList"
+            android:label="@string/title_activity_add_to_food_list" >
+        </activity>
+        <activity
+            android:name=".ViewCurrentDay"
+            android:label="@string/title_activity_view_current_day" >
+        </activity>
+    </application>
+
+</manifest>
