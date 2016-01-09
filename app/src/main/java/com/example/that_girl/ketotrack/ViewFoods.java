@@ -125,7 +125,7 @@ public class ViewFoods extends AppCompatActivity {
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-         thisWorks("You done changed shit now");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_foods);
         FILENAME = getString(R.string.food_filename);

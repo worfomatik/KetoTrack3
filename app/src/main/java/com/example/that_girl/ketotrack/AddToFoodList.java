@@ -22,7 +22,6 @@ public class AddToFoodList extends AppCompatActivity {
 
         String FILENAME = getString(R.string.food_filename);
         File inputFile = new File (getFilesDir(),FILENAME);
-        String fargenflavor = "wtf.";
 
         if(inputFile.exists()) {
             try {
