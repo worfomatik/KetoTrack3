@@ -36,6 +36,15 @@ public class ViewCurrentDay extends AppCompatActivity {
         ViewCurrentDay.this.startActivity(intent);
     }
 
+    public void editFood(String item){
+        Intent intent = new Intent(this, EditFoodCurrentDay.class);
+        for(int i=0;i<days.get(settings.getIndex()).getFoodList().size(); i++) {
+            if (days.get(settings.getIndex()).getFoodList().get(i).toString().equals(item)){
+                intent.putExtra("foodDesc", days.get(settings.getIndex()).getFoodList().get(i).toString());
+            }
+        }
+        ViewCurrentDay.this.startActivity(intent);
+    }
     //Delete food from food list and save to file
     public void deleteFood(String item){
         //TODO: Add some error prevention stuff. Maybe a message if for some unlikely reason the item isnt found
@@ -76,7 +85,7 @@ public class ViewCurrentDay extends AppCompatActivity {
 
         //adapter.getItem(info.position).toString() is what I'm using to find the food item in the linkedlist in the adapter
         if(item.getTitle()=="Edit"){
-           // editFood(adapter.getItem(info.position).toString());
+            editFood(adapter1.getItem(info.position).toString());
         }
         else if(item.getTitle()=="Delete"){
            deleteFood(adapter1.getItem(info.position).toString());

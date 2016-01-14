@@ -44,6 +44,10 @@
             android:name=".ViewCurrentDay"
             android:label="@string/title_activity_view_current_day" >
         </activity>
+        <activity
+            android:name=".EditFoodCurrentDay"
+            android:label="@string/title_activity_edit_food_current_day" >
+        </activity>
     </application>
 
 </manifest>

@@ -35,9 +35,7 @@ public class ViewFoods extends AppCompatActivity {
     //TODO: switch from declaring menu here to using an XML file
     //TODO: alphabetize foods oncreate
     //TODO: add food button needs a new activity for adding food without adding to day and routes back to view foods
-
-        //TEST COMMIT!!
-
+    //TODO: clean up the code here theres a whole bunch of unused crap now
     //Delete food from food list and save to file
     public void deleteFood(String item){
         //TODO: Add some error prevention stuff. Maybe a message if for some unlikely reason the item isnt found
