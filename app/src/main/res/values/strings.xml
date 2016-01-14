@@ -15,4 +15,5 @@
     <string name="food_filename">food1.data</string>
     <string name="user_filename">user1.data</string>
     <string name="title_activity_edit_food_current_day">EditFoodCurrentDay</string>
+    <string name="title_activity_view_days">ViewDays</string>
 </resources>

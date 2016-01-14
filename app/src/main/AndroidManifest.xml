@@ -48,6 +48,10 @@
             android:name=".EditFoodCurrentDay"
             android:label="@string/title_activity_edit_food_current_day" >
         </activity>
+        <activity
+            android:name=".ViewDays"
+            android:label="@string/title_activity_view_days" >
+        </activity>
     </application>
 
 </manifest>
