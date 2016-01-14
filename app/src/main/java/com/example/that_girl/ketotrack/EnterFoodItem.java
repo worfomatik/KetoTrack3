@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -44,8 +45,6 @@ public class EnterFoodItem extends AppCompatActivity {
     ArrayAdapter adapter;
 
     public void autoFillFields(){
-
-        //thisWorked(field.getText().toString());
         try{
             for(int i=0; i<food.size();i++){
 
@@ -108,69 +107,80 @@ public class EnterFoodItem extends AppCompatActivity {
         }
     }
 
-    //TODO: display error message if no name is entered
-    //Adds new food to both the current day list and master food list
+    //Adds new food to both the current day list and master food list when add button is pressed
     public void addFood(View view){
-        if(inputFile.exists()) {
-            try {
-                //initialize local copy of days list
-                FileInputStream fis1 = new FileInputStream(inputFile1);
-                ObjectInputStream ois1 = new ObjectInputStream(fis1);
-                days = (LinkedList) ois1.readObject();
-                ois1.close();
+        //Check if name is empty
+        if(field.getText().toString().equals("")){
+            thisWorked("Please enter a name.");
+        }
+        else{
+            if(inputFile.exists()) {
+                try {
+                    //initialize local copy of days list
+                    FileInputStream fis1 = new FileInputStream(inputFile1);
+                    ObjectInputStream ois1 = new ObjectInputStream(fis1);
+                    days = (LinkedList) ois1.readObject();
+                    ois1.close();
 
-                //pull data from fields
-                field = (AutoCompleteTextView)findViewById(R.id.foodName);
-                field1 = (EditText)findViewById(R.id.foodFat);
-                field2 = (EditText)findViewById(R.id.foodProtein);
-                field3 = (EditText)findViewById(R.id.foodCarbs);
-                field4 = (EditText)findViewById(R.id.description);
+                    //pull data from fields
+                    field = (AutoCompleteTextView)findViewById(R.id.foodName);
+                    field1 = (EditText)findViewById(R.id.foodFat);
+                    field2 = (EditText)findViewById(R.id.foodProtein);
+                    field3 = (EditText)findViewById(R.id.foodCarbs);
+                    field4 = (EditText)findViewById(R.id.description);
 
-                //Create new food item from data
-                FoodItem f = new FoodItem(field.getText().toString(),
-                        Double.parseDouble(field1.getText().toString()),
-                        Double.parseDouble(field2.getText().toString()),
-                        Double.parseDouble(field3.getText().toString()),
-                        field4.getText().toString());
+                    //Create new food item from data
+                    FoodItem f = new FoodItem(field.getText().toString(),
+                            Double.parseDouble(field1.getText().toString()),
+                            Double.parseDouble(field2.getText().toString()),
+                            Double.parseDouble(field3.getText().toString()),
+                            field4.getText().toString());
 
-                //Add to list
-                food.add(f);
-                //add food to array in current day
-                days.get(settings.getIndex()).addFood(f);
+                    //Add to list
+                    food.add(f);
+                    //add food to array in current day
+                    days.get(settings.getIndex()).addFood(f);
 
-                //save days list
-                File outputFile1 = new File(getFilesDir(), FILENAME1);
-                FileOutputStream fos1 = new FileOutputStream(outputFile1);
-                ObjectOutputStream oos1 = new ObjectOutputStream(fos1);
-                oos1.writeObject(days);
-                oos1.close();
+                    //save days list
+                    File outputFile1 = new File(getFilesDir(), FILENAME1);
+                    FileOutputStream fos1 = new FileOutputStream(outputFile1);
+                    ObjectOutputStream oos1 = new ObjectOutputStream(fos1);
+                    oos1.writeObject(days);
+                    oos1.close();
 
-                //Save updated list
-                File outputFile = new File (getFilesDir(),FILENAME);
-                FileOutputStream fos = new FileOutputStream(outputFile);
-                ObjectOutputStream oos = new ObjectOutputStream(fos);
-                oos.writeObject(food);
-                oos.close();
+                    //Save updated list
+                    File outputFile = new File (getFilesDir(),FILENAME);
+                    FileOutputStream fos = new FileOutputStream(outputFile);
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                    oos.writeObject(food);
+                    oos.close();
 
-                //Display food-added-to-list toast
-                Context context = getApplicationContext();
-                CharSequence text = "Food Added and saved to Food list";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                    //Display food-added-to-list toast
+                    Context context = getApplicationContext();
+                    CharSequence text = "Food Added and saved to Food list";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
 
-                //Reset fields
-                field.getText().clear();
-                field1.getText().clear();
-                field2.getText().clear();
-                field3.getText().clear();
-                field4.getText().clear();
+                    //Reset fields
+                    field.getText().clear();
+                    field1.getText().clear();
+                    field2.getText().clear();
+                    field3.getText().clear();
+                    field4.getText().clear();
 
-                //Update adapter for predictions
-                adapter.add(f);
+                    //Update adapter for predictions
+                    adapter.add(f);
 
-            } catch (Exception ex) {
-                ex.printStackTrace();
+
+                }
+                catch(NumberFormatException num){
+                    thisWorked("Oops! please enter valid numbers.");
+                    num.printStackTrace();
+                }
+                catch (Exception ex) {
+                    ex.printStackTrace();
+                }
             }
         }
 
@@ -275,28 +285,20 @@ public class EnterFoodItem extends AppCompatActivity {
             settings = (AppSettings) ois2.readObject();
             ois2.close();
 
+            //initialize autocomplete adapter with food list
             text=(AutoCompleteTextView)findViewById(R.id.foodName);
-            // text1=(MultiAutoCompleteTextView)findViewById(R.id.multiAutoCompleteTextView1);
-
             adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,food);
-
             text.setAdapter(adapter);
 
             //set predictive text to kick in after 3 characters entered
             text.setThreshold(3);
 
-            thisWorked("Things got to this point");
             text.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-
                     autoFillFields();
-                    thisWorked("Things then got here");
                 }
             });
-
-            //text1.setAdapter(adapter);
-            //text1.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
         }
         catch (Exception e){
             e.printStackTrace();
