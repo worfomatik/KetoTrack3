@@ -15,6 +15,12 @@ import java.io.ObjectOutputStream;
 import java.util.Date;
 import java.util.LinkedList;
 
+
+//TODO:     Apparently the application is using the main thread too much
+//TODO:     So make sure to push all the work to other threads
+//TODO:     apparently the app shouldn't be making android skip > 100 frames
+
+
 public class MainActivity extends AppCompatActivity {
     public void viewCurrentDay(View view){
         Intent intent = new Intent(this, ViewCurrentDay.class);
