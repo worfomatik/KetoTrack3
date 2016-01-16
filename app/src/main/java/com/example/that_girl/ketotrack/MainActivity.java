@@ -22,6 +22,10 @@ import java.util.LinkedList;
 
 
 public class MainActivity extends AppCompatActivity {
+    public void viewOtherDay(View view){
+        Intent intent = new Intent(this, ViewDays.class);
+        MainActivity.this.startActivity(intent);
+    }
     public void viewCurrentDay(View view){
         Intent intent = new Intent(this, ViewCurrentDay.class);
         MainActivity.this.startActivity(intent);

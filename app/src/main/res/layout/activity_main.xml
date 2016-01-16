@@ -43,7 +43,8 @@
             android:text="View Another Day"
             android:id="@+id/anotherDayButton"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.19" />
+            android:layout_weight="0.19"
+            android:onClick="viewOtherDay"/>
 
         <Button
             android:layout_width="match_parent"

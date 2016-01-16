@@ -1,6 +1,8 @@
 package com.example.that_girl.ketotrack;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,7 +49,6 @@ public class EnterFoodItem extends AppCompatActivity {
     public void autoFillFields(){
         try{
             for(int i=0; i<food.size();i++){
-
                 if(food.get(i).toString().equals(field.getText().toString())){
                     tempFood = food.get(i);
                     field.setText(tempFood.getName());
@@ -55,8 +56,6 @@ public class EnterFoodItem extends AppCompatActivity {
                     field2.setText(Double.toString(tempFood.getProtein()));
                     field3.setText(Double.toString(tempFood.getCarbs()));
                     field4.setText(tempFood.getDescription());
-
-
 
                     break;
                 }
@@ -67,7 +66,6 @@ public class EnterFoodItem extends AppCompatActivity {
             e.printStackTrace();
         }
         addFood();
-
     }
 
     public void thisWorked(String s){
@@ -79,32 +77,62 @@ public class EnterFoodItem extends AppCompatActivity {
     }
 
     public void newDay(View view){
-        days.get(settings.getIndex()).setEndDate(new Date());
-        days.add(new Day());
-        days.get(settings.getIndex()).setNotCurrentDay();
-        settings.incIndex();
-        Context context = getApplicationContext();
-        CharSequence text = settings.getIndex()+"New Day Created for " + days.get(settings.getIndex()).getDate().toString();
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-        try {
-            //Save updated settings
-            File outputFile = new File(getFilesDir(), FILENAME2);
-            FileOutputStream fos = new FileOutputStream(outputFile);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(settings);
-            oos.close();
-            //save days list
-            File outputFile1 = new File(getFilesDir(), FILENAME1);
-            FileOutputStream fos1 = new FileOutputStream(outputFile1);
-            ObjectOutputStream oos1 = new ObjectOutputStream(fos1);
-            oos1.writeObject(days);
-            oos1.close();
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(EnterFoodItem.this);
+
+        // Setting Dialog Title
+        alertDialog.setTitle("Confirm New Day...");
+
+        // Setting Dialog Message
+        alertDialog.setMessage("Start a new day?");
+
+        // Setting Icon to Dialog
+        //alertDialog.setIcon(R.drawable.delete);
+
+        // Setting Positive "Yes" Button
+        alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog,int which) {
+                days.get(settings.getIndex()).setEndDate(new Date());
+                days.add(new Day());
+                days.get(settings.getIndex()).setNotCurrentDay();
+                settings.incIndex();
+                Context context = getApplicationContext();
+                CharSequence text = "New Day Created for " + days.get(settings.getIndex()).getDate().toString();
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+
+                thisWorked(Integer.toString(settings.getIndex()));
+                try {
+                    //Save updated settings
+                    File outputFile = new File(getFilesDir(), FILENAME2);
+                    FileOutputStream fos = new FileOutputStream(outputFile);
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                    oos.writeObject(settings);
+                    oos.close();
+                    //save days list
+                    File outputFile1 = new File(getFilesDir(), FILENAME1);
+                    FileOutputStream fos1 = new FileOutputStream(outputFile1);
+                    ObjectOutputStream oos1 = new ObjectOutputStream(fos1);
+                    oos1.writeObject(days);
+                    oos1.close();
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        // Setting Negative "NO" Button
+        alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        // Showing Alert Message
+        alertDialog.show();
+
+
     }
 
     //Adds new food to both the current day list and master food list when add button is pressed
