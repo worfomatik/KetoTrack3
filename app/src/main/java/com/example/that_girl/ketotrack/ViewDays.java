@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,6 +28,16 @@ public class ViewDays extends AppCompatActivity {
     ArrayAdapter adapter;
     UserProfile user;
 
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+
+        Intent intent = new Intent(this, ViewOtherDay.class);
+        intent.putExtra("dayIndex", adapter.getItem(info.position).toString());
+
+        ViewDays.this.startActivity(intent);
+
+        return true;
+    }
     //Return to Main menu
     public void backToMenu(View view){
         Intent intent = new Intent(this, MainActivity.class);
@@ -51,6 +62,7 @@ public class ViewDays extends AppCompatActivity {
         USERFILE = getString(R.string.user_filename);
         inputFile = new File (getFilesDir(),DAYSFILE);
         inputFile1 = new File (getFilesDir(),USERFILE);
+        final Intent intent = new Intent(this, ViewOtherDay.class);
 
         try{
             inputFile = new File(getFilesDir(),DAYSFILE);
@@ -71,6 +83,18 @@ public class ViewDays extends AppCompatActivity {
             thisWorked(user.toString());
 
             textView.setText(user.toString());
+
+
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+            {
+                @Override
+                public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
+                {
+                    intent.putExtra("dayIndex", adapter.getItem(position).toString());
+
+                    ViewDays.this.startActivity(intent);
+                }
+            });
         }
         catch (Exception e){
             e.printStackTrace();

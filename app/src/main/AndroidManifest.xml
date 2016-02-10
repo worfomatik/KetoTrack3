@@ -52,6 +52,10 @@
             android:name=".ViewDays"
             android:label="@string/title_activity_view_days" >
         </activity>
+        <activity
+            android:name=".ViewOtherDay"
+            android:label="@string/title_activity_view_other_day" >
+        </activity>
     </application>
 
 </manifest>

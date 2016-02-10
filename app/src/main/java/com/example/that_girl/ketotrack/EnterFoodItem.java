@@ -27,8 +27,7 @@ import android.widget.ArrayAdapter;
 
 public class EnterFoodItem extends AppCompatActivity {
 
-    //Todo: Add food to current day; figure out how to organize days in app as well
-    //Todo: Input validation
+
     LinkedList <Day> days;
     LinkedList <FoodItem> food;
     AppSettings settings;
