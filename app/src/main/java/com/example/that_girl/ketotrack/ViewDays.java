@@ -80,7 +80,6 @@ public class ViewDays extends AppCompatActivity {
             ObjectInputStream ois1 = new ObjectInputStream(fis1);
             user = (UserProfile) ois1.readObject();
             ois1.close();
-            thisWorked(user.toString());
 
             textView.setText(user.toString());
 

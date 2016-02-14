@@ -30,17 +30,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Back to menu"
-            android:id="@+id/backToMenu"
-            android:layout_gravity="center_horizontal"
-            android:onClick="backToMenu"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
             android:text="Other Days"
             android:id="@+id/backToMenu"
             android:layout_gravity="center_horizontal"
             android:onClick="otherDays"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="Back to menu"
+            android:id="@+id/backToMenu"
+            android:layout_gravity="center_horizontal"
+            android:onClick="backToMenu"/>
+
     </LinearLayout>
 </RelativeLayout>

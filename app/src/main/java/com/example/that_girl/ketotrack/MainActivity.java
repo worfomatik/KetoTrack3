@@ -19,7 +19,10 @@ import java.util.LinkedList;
 //TODO:     Apparently the application is using the main thread too much
 //TODO:     So make sure to push all the work to other threads
 //TODO:     apparently the app shouldn't be making android skip > 100 frames
-
+//TODO:     One more button to show the activity displaying total progress. Probably put it into a table for now. Graphs will probably end up being a 2.0 feature
+//TODO:     add 'warning' functionality when foods entered for the day start hitting close to the daily values
+//TODO:     Add link somewhere to the macro calculator online
+//TODO:     For testing, set up something so people can easily enter bugs into a db
 
 public class MainActivity extends AppCompatActivity {
     public void viewOtherDay(View view){
