@@ -90,8 +90,7 @@ public class ViewDays extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
                 {
-                    intent.putExtra("dayIndex", adapter.getItem(position).toString());
-
+                    intent.putExtra("dayIndex", Integer.toString(position));
                     ViewDays.this.startActivity(intent);
                 }
             });

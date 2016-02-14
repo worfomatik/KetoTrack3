@@ -6,14 +6,25 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.util.LinkedList;
 
 public class ViewOtherDay extends AppCompatActivity {
     LinkedList<Day> days;
     File daysInputFile;
     String DAYSFILE;
+    TextView textView;
+    int index;
+    Intent intent;
+    ArrayAdapter adapter;
+    ListView listView;
 
     public void backToMenu(View view){
         Intent intent = new Intent(this, MainActivity.class);
@@ -30,7 +41,20 @@ public class ViewOtherDay extends AppCompatActivity {
         DAYSFILE = getString(R.string.days_filename);
 
         try{
+            daysInputFile = new File(getFilesDir(),DAYSFILE);
+            FileInputStream fis = new FileInputStream(daysInputFile);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            days = (LinkedList) ois.readObject();
+            ois.close();
+            String id = getIntent().getStringExtra("dayIndex");
+            index = Integer.parseInt(id);
 
+            textView = (TextView) findViewById(R.id.textView);
+
+            textView.setText(days.get(index).toString());
+            listView = (ListView) findViewById(R.id.listView1);
+            adapter = new ArrayAdapter(this,R.layout.item_list_appearance,days.get(index).getFoodList());
+            listView.setAdapter(adapter);
         }
         catch(Exception e){
             e.printStackTrace();
