@@ -73,21 +73,24 @@
             android:text="Add"
             android:id="@+id/addFoodButton"
             android:layout_gravity="center_horizontal"
-            android:onClick="addFood"/>
+            android:onClick="addFood"
+                android:background="@drawable/button"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="New Day"
                 android:id="@+id/saveButton"
                 android:onClick="newDay"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/button"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Back To Menu"
                 android:id="@+id/menuButton"
                 android:onClick="backToMenu"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/button"/>
         </LinearLayout>
     </LinearLayout>
 

@@ -40,7 +40,8 @@
                     android:id="@+id/editProfile"
                     android:layout_weight="0"
                     android:layout_gravity="center_horizontal"
-                    android:onClick="editProfile"/>
+                    android:onClick="editProfile"
+                    android:background="@drawable/button"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -48,7 +49,8 @@
                     android:id="@+id/backToMenu"
                     android:layout_weight="0"
                     android:layout_gravity="center_horizontal"
-                    android:onClick="backToMenu"/>
+                    android:onClick="backToMenu"
+                    android:background="@drawable/button"/>
             </LinearLayout>
     </LinearLayout>
 

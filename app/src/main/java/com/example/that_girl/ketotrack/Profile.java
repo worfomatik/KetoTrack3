@@ -12,6 +12,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
+//TODO: populate the edit profile fields with current profile data if it exists
+
 public class Profile extends AppCompatActivity {
     public void backToMenu(View view){
         Intent intent = new Intent(this, MainActivity.class);

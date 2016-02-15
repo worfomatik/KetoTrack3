@@ -25,6 +25,7 @@ public class EditProfile extends AppCompatActivity {
     }
     //Pull data from fields, save/update file, and route back to profile
     //TODO : Add some input validation for the fields so the profile doesn't display all retarded even if the user is acting like it
+    //TODO: add back to profile button incase user doesnt wanna edit the profile
     public void saveData(View view){
         String fName,lName;
         double f,p,c;

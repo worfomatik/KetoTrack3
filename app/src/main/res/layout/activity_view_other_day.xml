@@ -33,7 +33,8 @@
             android:text="Other Days"
             android:id="@+id/backToMenu"
             android:layout_gravity="center_horizontal"
-            android:onClick="otherDays"/>
+            android:onClick="otherDays"
+            android:background="@drawable/button"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,7 +42,8 @@
             android:text="Back to menu"
             android:id="@+id/backToMenu"
             android:layout_gravity="center_horizontal"
-            android:onClick="backToMenu"/>
+            android:onClick="backToMenu"
+            android:background="@drawable/button"/>
 
     </LinearLayout>
 </RelativeLayout>

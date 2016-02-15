@@ -61,7 +61,8 @@
             android:text="Update"
             android:id="@+id/addFoodButton"
             android:layout_gravity="center_horizontal"
-            android:onClick="updateFood"/>
+            android:onClick="updateFood"
+            android:background="@drawable/button"/>
     </LinearLayout>
 
 </RelativeLayout>
