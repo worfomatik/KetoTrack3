@@ -4,22 +4,24 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    >
+    style="@style/BackgroundColor">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="1">
+        android:weightSum="1"
+        >
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Profile"
             android:id="@+id/profileButton"
-            android:layout_weight="0.19"
+            android:layout_weight="0.166"
             android:onClick="profileView"
-            android:background="@drawable/button"/>
+            android:background="@drawable/button"
+            style="@style/ButtonFontSize"/>
 
         <Button
             android:layout_width="match_parent"
@@ -27,9 +29,10 @@
             android:text="Enter Food"
             android:id="@+id/enterFoodButton"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.19"
+            android:layout_weight="0.166"
             android:onClick="enterFood"
-            android:background="@drawable/button"/>
+            android:background="@drawable/button"
+            style="@style/ButtonFontSize"/>
 
         <Button
             android:layout_width="match_parent"
@@ -37,9 +40,10 @@
             android:text="Current Day"
             android:id="@+id/currentDayButton"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.19"
+            android:layout_weight="0.166"
             android:onClick="viewCurrentDay"
-            android:background="@drawable/button"/>
+            android:background="@drawable/button"
+            style="@style/ButtonFontSize"/>
 
         <Button
             android:layout_width="match_parent"
@@ -47,9 +51,10 @@
             android:text="Other Days"
             android:id="@+id/anotherDayButton"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.19"
+            android:layout_weight="0.166"
             android:onClick="viewOtherDay"
-            android:background="@drawable/button"/>
+            android:background="@drawable/button"
+            style="@style/ButtonFontSize"/>
 
         <Button
             android:layout_width="match_parent"
@@ -57,9 +62,20 @@
             android:text="Food List"
             android:id="@+id/foodsButton"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.19"
+            android:layout_weight="0.166"
             android:onClick="viewFoods"
-            android:background="@drawable/button"/>
+            android:background="@drawable/button"
+            style="@style/ButtonFontSize"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Progress"
+            android:id="@+id/foodsButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.166"
+            android:onClick="progress"
+            android:background="@drawable/button"
+            style="@style/ButtonFontSize"/>
 
     </LinearLayout>
 </RelativeLayout>

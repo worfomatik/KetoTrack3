@@ -5,4 +5,14 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="ButtonFontSize">
+        <item name="android:textSize">25sp</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BackgroundColor">
+        <item name="android:background">#9828008c</item>
+    </style>
+
 </resources>

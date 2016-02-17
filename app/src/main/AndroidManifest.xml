@@ -56,6 +56,10 @@
             android:name=".ViewOtherDay"
             android:label="@string/title_activity_view_other_day" >
         </activity>
+        <activity
+            android:name=".Progress"
+            android:label="@string/title_activity_progress" >
+        </activity>
     </application>
 
 </manifest>
