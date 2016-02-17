@@ -21,7 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/foodName"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edittextstyle"/>
 
         <EditText
             android:hint="Grams of Fat"
@@ -29,7 +30,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/foodFat"
             android:inputType="numberDecimal"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edittextstyle"/>
 
         <EditText
             android:hint="Grams of Protein"
@@ -37,7 +39,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/foodProtein"
             android:inputType="numberDecimal"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edittextstyle"/>
 
         <EditText
             android:hint="Grams of Carbs"
@@ -45,7 +48,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/foodCarbs"
             android:inputType="numberDecimal"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edittextstyle"/>
 
         <EditText
             android:hint="Serving Details"
@@ -54,13 +58,15 @@
             android:inputType="textMultiLine"
             android:ems="10"
             android:id="@+id/description"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edittextstyle"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
             android:id="@+id/textView"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            style="@style/BackgroundEditText"/>
 
         <LinearLayout
             android:orientation="vertical"

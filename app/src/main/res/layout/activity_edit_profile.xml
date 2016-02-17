@@ -22,14 +22,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/firstName"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edittextstyle"/>
 
         <EditText
             android:hint="Last Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/lastName"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edittextstyle"/>
 
         <EditText
             android:hint="Grams of Fat"
@@ -37,7 +39,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/fat"
             android:inputType="numberDecimal"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edittextstyle"/>
 
         <EditText
             android:hint="Grams of Protein"
@@ -45,7 +48,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/protein"
             android:inputType="numberDecimal"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edittextstyle"/>
 
         <EditText
             android:hint="Grams of Carbs"
@@ -53,7 +57,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/carbs"
             android:inputType="numberDecimal"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edittextstyle"/>
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"

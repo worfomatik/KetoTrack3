@@ -15,4 +15,9 @@
         <item name="android:background">#9828008c</item>
     </style>
 
+    <style name="BackgroundEditText">
+        <item name="android:background">#98a195d9</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
 </resources>

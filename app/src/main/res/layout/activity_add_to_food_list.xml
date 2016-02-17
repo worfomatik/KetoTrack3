@@ -29,7 +29,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/foodFat"
             android:inputType="numberDecimal"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edittextstyle"/>
 
         <EditText
             android:hint="Grams of Protein"
@@ -37,7 +38,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/foodProtein"
             android:inputType="numberDecimal"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edittextstyle"/>
 
         <EditText
             android:hint="Grams of Carbs"
@@ -45,7 +47,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/foodCarbs"
             android:inputType="numberDecimal"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edittextstyle"/>
 
         <EditText
             android:hint="Serving Details"
@@ -54,7 +57,8 @@
             android:inputType="textMultiLine"
             android:ems="10"
             android:id="@+id/description"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edittextstyle"/>
 
         <Button
             android:layout_width="wrap_content"
