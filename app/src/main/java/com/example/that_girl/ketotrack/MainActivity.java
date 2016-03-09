@@ -25,6 +25,10 @@ import java.util.LinkedList;
 //TODO:     For testing, set up something so people can easily enter bugs into a db
 
 public class MainActivity extends AppCompatActivity {
+    public void progress(View view){
+        Intent intent = new Intent(this, Progress.class);
+        MainActivity.this.startActivity(intent);
+    }
     public void viewOtherDay(View view){
         Intent intent = new Intent(this, ViewDays.class);
         MainActivity.this.startActivity(intent);

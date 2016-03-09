@@ -75,7 +75,7 @@ public class EnterFoodItem extends AppCompatActivity {
         toast.show();
     }
 
-    public void newDay(View view){
+    public void newDay(){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(EnterFoodItem.this);
 
         // Setting Dialog Title
@@ -89,7 +89,7 @@ public class EnterFoodItem extends AppCompatActivity {
 
         // Setting Positive "Yes" Button
         alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog,int which) {
+            public void onClick(DialogInterface dialog, int which) {
                 days.get(settings.getIndex()).setEndDate(new Date());
                 days.add(new Day());
                 days.get(settings.getIndex()).setNotCurrentDay();
@@ -100,7 +100,6 @@ public class EnterFoodItem extends AppCompatActivity {
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
 
-                thisWorked(Integer.toString(settings.getIndex()));
                 try {
                     //Save updated settings
                     File outputFile = new File(getFilesDir(), FILENAME2);
@@ -114,10 +113,10 @@ public class EnterFoodItem extends AppCompatActivity {
                     ObjectOutputStream oos1 = new ObjectOutputStream(fos1);
                     oos1.writeObject(days);
                     oos1.close();
-                }
-                catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
+                refresh();
             }
         });
 
@@ -132,6 +131,15 @@ public class EnterFoodItem extends AppCompatActivity {
         alertDialog.show();
 
 
+
+    }
+
+    /**
+     * Reload the activity
+     */
+    public void refresh(){
+        Intent intent = new Intent(this, EnterFoodItem.class);
+        EnterFoodItem.this.startActivity(intent);
     }
 
     //Adds new food to both the current day list and master food list when add button is pressed
@@ -330,8 +338,10 @@ public class EnterFoodItem extends AppCompatActivity {
         catch (Exception e){
             e.printStackTrace();
         }
-
-        textView.setText(days.get(settings.getIndex()).getDate().toString());
+        if(days.isEmpty()){
+            newDay();
+        }
+        textView.setText(days.get(settings.getIndex()).getDateString());
     }
 
     @Override

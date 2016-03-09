@@ -11,7 +11,7 @@
     <string name="title_activity_add_to_food_list">AddToFoodList</string>
     <string name="title_activity_view_current_day">ViewCurrentDay</string>
     <string name="settings_filename">settings2.data</string>
-    <string name="days_filename">days9.data</string>
+    <string name="days_filename">days11.data</string>
     <string name="food_filename">food1.data</string>
     <string name="user_filename">user1.data</string>
     <string name="title_activity_edit_food_current_day">EditFoodCurrentDay</string>

@@ -20,4 +20,24 @@
         <item name="android:textSize">20sp</item>
     </style>
 
+    <style name="TextViewUnder">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#009046</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:background">#f0f0f0</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+    <style name="TextViewOver">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#9e0b10</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:background">#f0f0f0</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">10dp</item>
+        <item name="android:padding">5dp</item>
+    </style>
 </resources>

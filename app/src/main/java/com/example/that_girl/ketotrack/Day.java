@@ -1,6 +1,7 @@
 package com.example.that_girl.ketotrack;
 
 import java.io.Serializable;
+import java.text.DateFormat;
 import java.util.Date;
 import java.util.LinkedList;
 
@@ -8,12 +9,15 @@ import java.util.LinkedList;
  * Created by that_girl on 12/2/2015.
  */
 public class Day implements Serializable{
-
+    //TODO: add doubles to contain the comparison value to users current macros
+    //TODO: The values should belong to the individual day so that if the user adjusts
+    //TODO: macros in the future their previous progress data wont change
     final Date date;
     Date endDate;
     LinkedList<FoodItem> foods;
     double carbs,protein,fat;
     boolean notCurrentDay;
+    String str;
 
     public Day() {
         this.date = new Date();
@@ -22,10 +26,14 @@ public class Day implements Serializable{
         this.fat=0;
         this.protein=0;
         this.notCurrentDay=false;
+        this.str = DateFormat.getDateInstance().format(date);
     }
 
-    public Date getDate() {
+    public Date getDate(){
         return date;
+    }
+    public String getDateString() {
+        return str;
     }
 
     public void addFood(FoodItem theFood){
