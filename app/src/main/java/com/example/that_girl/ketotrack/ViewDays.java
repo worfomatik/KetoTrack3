@@ -74,6 +74,7 @@ public class ViewDays extends AppCompatActivity {
             listView = (ListView) findViewById(R.id.listView1);
             adapter = new ArrayAdapter(this,R.layout.item_list_appearance,days);
             listView.setAdapter(adapter);
+            listView.setBackgroundResource(R.drawable.scrollstyle);
 
 
             FileInputStream fis1 = new FileInputStream(inputFile1);

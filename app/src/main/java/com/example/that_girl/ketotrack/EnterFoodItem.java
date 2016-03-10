@@ -75,7 +75,7 @@ public class EnterFoodItem extends AppCompatActivity {
         toast.show();
     }
 
-    public void newDay(){
+    public void newDay(View view){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(EnterFoodItem.this);
 
         // Setting Dialog Title
@@ -337,9 +337,6 @@ public class EnterFoodItem extends AppCompatActivity {
         }
         catch (Exception e){
             e.printStackTrace();
-        }
-        if(days.isEmpty()){
-            newDay();
         }
         textView.setText(days.get(settings.getIndex()).getDateString());
     }

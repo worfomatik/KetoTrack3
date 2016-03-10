@@ -32,6 +32,8 @@ public class Progress extends AppCompatActivity {
     File inputFile,inputFile1;
     UserProfile user;
 
+    //TODO: wherever user profile data is used make sure the user has entered profile info and display message to do so if it isnt there
+
     public void backToMenu(View view){
         Intent intent = new Intent(this, MainActivity.class);
         Progress.this.startActivity(intent);
@@ -130,18 +132,8 @@ public class Progress extends AppCompatActivity {
             tableRow.addView(overp);
 
             tableLayout.addView(tableRow);
-            DateFormat df=new DateFormat() {
-                @Override
-                public StringBuffer format(Date date, StringBuffer buffer, FieldPosition field) {
-                    return null;
-                }
 
-                @Override
-                public Date parse(String string, ParsePosition position) {
-                    return null;
-                }
-            };
-           // String d = df.format(getDateInstance());
+
         }
     }
     public void thisWorked(String s){
@@ -168,13 +160,15 @@ public class Progress extends AppCompatActivity {
             ObjectInputStream ois = new ObjectInputStream(fis);
             days = (LinkedList) ois.readObject();
             ois.close();
-
+            thisWorked("made it through days init");
             inputFile1 = new File(getFilesDir(),USERFILE);
             FileInputStream fis1 = new FileInputStream(inputFile1);
             ObjectInputStream ois1 = new ObjectInputStream(fis1);
             user = (UserProfile) ois1.readObject();
             ois1.close();
+
             makeTables();
+
         }
         catch (Exception e){
             e.printStackTrace();
