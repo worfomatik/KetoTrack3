@@ -140,6 +140,7 @@ public class ViewFoods extends AppCompatActivity {
             listView.setAdapter(adapter);
             registerForContextMenu(listView);
             Collections.sort(food);
+            listView.setBackgroundResource(R.drawable.scrollstyle);
         }
         catch (Exception e){
             e.printStackTrace();

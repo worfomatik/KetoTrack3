@@ -55,6 +55,7 @@ public class ViewOtherDay extends AppCompatActivity {
             listView = (ListView) findViewById(R.id.listView1);
             adapter = new ArrayAdapter(this,R.layout.item_list_appearance,days.get(index).getFoodList());
             listView.setAdapter(adapter);
+            listView.setBackgroundResource(R.drawable.scrollstyle);
         }
         catch(Exception e){
             e.printStackTrace();

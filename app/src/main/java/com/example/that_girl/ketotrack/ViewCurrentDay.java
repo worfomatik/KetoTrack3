@@ -125,7 +125,7 @@ public class ViewCurrentDay extends AppCompatActivity {
             listView = (ListView) findViewById(R.id.listView1);
             adapter1 = new ArrayAdapter(this,R.layout.item_list_appearance,f);
             listView.setAdapter(adapter1);
-
+            listView.setBackgroundResource(R.drawable.scrollstyle);
             registerForContextMenu(listView);
             //Collections.sort(food);
         }
